@@ -1595,7 +1595,7 @@ const cat_list = [
         "x": 4803,
         "y": 2696,
         "city": "violet",
-        "hint": "whiff_ocean",
+        "hint": "sound_tree",
         "region": "johto",
         "tooltip": "violet || Whiff of the ocean",
         "image": "https://drive.google.com/file/d/183q_xAckWbOfnUvuef11Xjqg7AFdMk5Z/view?usp=drive_link"
