@@ -1,0 +1,22 @@
+const hint_list = [
+    {"key": "whiff_ocean", "en": "Whiff of the ocean", "es": "Olorcillo a océano"},
+    {"key": "whiff_tasty", "en": "Whiff of something tasty", "es": "Olorcillo delicioso"},
+    {"key": "sound_tree", "en": "Sound of trees swaying", "es": "Árboles meciéndose"},
+    {"key": "salty_breeze", "en": "Salty breeze", "es": "Brisa salada"},
+    {"key": "cold_air", "en": "Rush of cold air", "es": "Ráfaga de aire frío"},
+    {"key": "splashing_water", "en": "Pokémon splashing in water", "es": "Pokémon salpicando el agua"},
+    {"key": "pleasant_floral", "en": "Pleasant floral aroma", "es": "Aroma floral agradable"},
+    {"key": "loud_splash", "en": "Loud splash", "es": "Chapoteo"},
+    {"key": "indistinct_chatter", "en": "Indistinct busy people chatter", "es": "Bullicio de personas ocupadas"},
+    {"key": "presence", "en": "Frightening presence", "es": "Presencia aterradora"},
+    {"key": "cry_rare", "en": "Cry of a rare Pokémon", "es": "Grito de un Pokémon raro"},
+    {"key": "cheerful_laughter", "en": "Cheerful laughter", "es": "Risa alegre"},
+    {"key": "warm", "en": "Warm air", "es": "Aire cálido"},
+    {"key": "damp", "en": "Damp smell", "es": "Olor a humedad"},
+    {"key": "wood", "en": "Creaking wood", "es": "Chirrido de la madera"},
+    {"key": "machine", "en": "Clanking machinery", "es": "Golpes metálicos"},
+    {"key": "eco", "en": "Echoes", "es": "Eco"},
+    {"key": "bip_bip_clack", "en": "Beep, beep, clunk", "es": "Bip, bip, clack"},
+    {"key": "rotten", "en": "Rotten odor", "es": "Olor a podrido"},
+    {"key": "music", "en": "Live music", "es": "Sonido a música"}
+];

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pumpcat Finder</title>
+    <link rel="icon" href="img/cat.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css?v=20261108f">
+    <link rel="stylesheet" href="styles/map.css?v=20261108f">
+</head>
+<body class="background pf-body">
+
+    <header id="pf-topbar">
+        <div class="pf-brand">
+            <img src="./img/cat.png" alt="" class="pf-brand-icon">
+            <span>Pumpcat Finder</span>
+        </div>
+
+        <nav id="pf-regions" data-i18n-aria="regions_aria"></nav>
+
+        <div class="pf-top-right">
+            <div class="pf-lang" role="group" aria-label="Language / Idioma">
+                <button class="pf-chip-btn pf-lang-btn" data-lang="es" title="Español">ES</button>
+                <button class="pf-chip-btn pf-lang-btn" data-lang="en" title="English">EN</button>
+            </div>
+            <div class="pf-progress" data-i18n-title="progress_title">
+                <span id="pf-progress-count">0</span>/30
+                <div class="pf-progress-bar"><div id="pf-progress-fill"></div></div>
+            </div>
+            <button id="menu-toggle" class="pf-icon-btn" data-i18n-aria="menu_aria">☰</button>
+        </div>
+    </header>
+
+    <main id="pf-main">
+        <div id="map-container">
+            <svg id="map-kanto" class="selected-map" viewBox="0 0 7511 6400"></svg>
+            <svg id="map-johto" class="hidden-map" viewBox="0 0 8660 5730"></svg>
+            <svg id="map-hoenn" class="hidden-map" viewBox="0 0 13024 6864"></svg>
+            <svg id="map-sinnoh" class="hidden-map" viewBox="0 0 13793 8360"></svg>
+            <svg id="map-unova" class="hidden-map" viewBox="0 0 9029 5905"></svg>
+
+            <div id="pf-markers"></div>
+
+            <button id="pf-about-btn" class="pf-chip-btn pf-map-ui" data-i18n="about_btn">ℹ Acerca de</button>
+            <button id="pf-reset-view" class="pf-chip-btn pf-map-ui" data-i18n="reset_view" data-i18n-title="reset_view_title">⤢ Ver todo</button>
+        </div>
+
+        <aside id="side-panel">
+            <section class="pf-card">
+                <div class="pf-card-head">
+                    <h3 data-i18n="hint_title">Pista actual</h3>
+                    <span id="pf-region-pill" class="pf-pill">Kanto</span>
+                </div>
+                <select name="hint" id="current-hint" class="pf-select"></select>
+            </section>
+
+            <section class="pf-card">
+                <div class="pf-card-head">
+                    <h3 data-i18n="cand_title">Escondites posibles</h3>
+                    <span id="pf-candidates-count" class="pf-pill pf-pill-accent">0</span>
+                </div>
+                <ul id="pf-candidates" class="pf-list"></ul>
+            </section>
+
+            <section class="pf-card">
+                <div class="pf-card-head">
+                    <h3 data-i18n="log_title">Registro</h3>
+                    <div class="pf-head-actions">
+                        <button id="pf-undo" class="pf-chip-btn" data-i18n="undo" data-i18n-title="undo_title">↶ Deshacer</button>
+                    </div>
+                </div>
+                <div id="pf-region-progress" class="pf-region-progress"></div>
+                <ol id="cat-table" class="cat-table pf-log"></ol>
+            </section>
+
+            <section class="pf-card pf-card-footer">
+                <button id="pf-reset-all" class="pf-chip-btn pf-danger" data-i18n="reset_all">Reiniciar búsqueda</button>
+            </section>
+        </aside>
+    </main>
+
+    <div id="pf-popover" role="dialog" aria-hidden="true">
+        <div class="pf-pop-title" id="pf-pop-title"></div>
+        <div class="pf-pop-hints" id="pf-pop-hints"></div>
+        <div class="pf-pop-actions" id="pf-pop-actions"></div>
+    </div>
+
+    <dialog id="pf-found-dialog" class="pf-dialog">
+        <form method="dialog">
+            <h4 id="pf-found-title" data-i18n="found_title_default">¡Gato encontrado!</h4>
+            <p id="pf-found-text" class="pf-muted"></p>
+
+            <h5 data-i18n="where_went">¿A qué región se fue?</h5>
+            <div id="pf-found-regions" class="pf-option-grid"></div>
+
+            <div class="pf-dialog-actions">
+                <button value="skip" class="pf-chip-btn" data-i18n="choose_later">Elegir después</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="pf-empty-dialog" class="pf-dialog">
+        <form method="dialog">
+            <h4 data-i18n="empty_title">No quedan gatos posibles 😿</h4>
+            <p id="pf-empty-text"></p>
+            <div class="pf-dialog-actions">
+                <button value="ok" class="pf-primary-btn" data-i18n="ok">Entendido</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="pf-about-dialog" class="pf-dialog">
+        <form method="dialog">
+            <p id="pf-about-congrats" class="pf-about-congrats" data-i18n="about_congrats" hidden></p>
+            <h4 data-i18n="about_title">Agradecimientos especiales</h4>
+            <p class="pf-muted" data-i18n="about_intro"></p>
+            <div id="pf-credits" class="pf-credits"></div>
+            <div class="pf-dialog-actions">
+                <button value="close" class="pf-primary-btn" data-i18n="close">Cerrar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <div id="pf-toast" role="status" aria-live="polite"></div>
+
+    <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+    <script src="src/cats.js?v=20261108f"></script>
+    <script src="src/cities.js?v=20261108f"></script>
+    <script src="src/hints.js?v=20261108f"></script>
+    <script src="src/credits.js?v=20261108f"></script>
+    <script src="src/i18n.js?v=20261108f"></script>
+    <script src="src/map.js?v=20261108f"></script>
+</body>
+</html>
