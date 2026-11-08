@@ -928,10 +928,10 @@ const cat_list = [
     {
         "x": 3609,
         "y": 2801,
-        "city": "petalburg",
+        "city": "mauville",
         "hint": "pleasant_floral",
         "region": "hoenn",
-        "tooltip": "petalburg || Pleasant floral aroma",
+        "tooltip": "mauville || Pleasant floral aroma",
         "image": "https://drive.google.com/file/d/1p4l9dXV0YNcsvVAp4gKOusp2nxr08BzT/view?usp=drive_link"
     },
     {
