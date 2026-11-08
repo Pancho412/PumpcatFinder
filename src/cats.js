@@ -1262,7 +1262,7 @@ const cat_list = [
         "x": 9001,
         "y": 7149,
         "city": "pastoria",
-        "hint": "damp",
+        "hint": "damp|pleasant_floral",
         "region": "sinnoh",
         "tooltip": "pastoria || Damp smell",
         "image": "https://drive.google.com/file/d/1Hmk6SRDMj_ca5mP-w__ziuDzkWf8hXSe/view?usp=drive_link"
