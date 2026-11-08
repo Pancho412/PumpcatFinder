@@ -1919,9 +1919,9 @@ const cat_list = [
         "x": 8812,
         "y": 7176,
         "city": "pastoria",
-        "hint": "indistinct_chatter",
+        "hint": "damp",
         "region": "sinnoh",
-        "tooltip": "pastoria || Indistinct chatter",
+        "tooltip": "pastoria || Damp Smell",
         "image": "https://drive.google.com/file/d/1tsMjHBJ8xVW1pdskiHKDzTHzdbczA-m9/view?usp=drive_link"
     },
     {
