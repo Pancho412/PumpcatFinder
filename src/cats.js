@@ -1603,7 +1603,7 @@ const cat_list = [
     {
         "x": 3740,
         "y": 5327,
-        "city": "",
+        "city": "azalea",
         "hint": "sound_tree",
         "region": "johto",
         "tooltip": "no city || Sound of trees swaying",
@@ -1639,7 +1639,7 @@ const cat_list = [
     {
         "x": 8437,
         "y": 1924,
-        "city": "",
+        "city": "blackthorn",
         "hint": "splashing_water",
         "region": "johto",
         "tooltip": "no city || Salty breeze",
@@ -1666,7 +1666,7 @@ const cat_list = [
     {
         "x": 3451,
         "y": 3865,
-        "city": "",
+        "city": "goldenrod",
         "hint": "indistinct_chatter",
         "region": "johto",
         "tooltip": "no city || Indistinct chatter",
@@ -1675,7 +1675,7 @@ const cat_list = [
     {
         "x": 5185,
         "y": 2455,
-        "city": "",
+        "city": "violet",
         "hint": "wood",
         "region": "johto",
         "tooltip": "no city || wood",
