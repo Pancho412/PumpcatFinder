@@ -2110,7 +2110,7 @@ const cat_list = [
         "city": "black_city",
         "hint": "eco",
         "region": "unova",
-        "tooltip": "no city || Eco",
+        "tooltip": "black_city || Eco",
         "image": "https://drive.google.com/file/d/1tLOs21tuEkNn1fy9z6Gy43mmtK9jjM4h/view?usp=drive_link"
     },
     {
@@ -2119,8 +2119,17 @@ const cat_list = [
         "city": "black_city",
         "hint": "eco",
         "region": "unova",
-        "tooltip": "no city || Eco",
+        "tooltip": "black_city || Eco",
         "image": "https://drive.google.com/file/d/1sw7sBOJ8yZY2GqRIU1gQCDVvdBSxYmJn/view?usp=drive_link"
+    },
+    {
+        "x": 6807,
+        "y": 3054,
+        "city": "black_city",
+        "hint": "eco",
+        "region": "unova",
+        "tooltip": "black_city || Eco",
+        "image": "https://drive.google.com/file/d/1vwLVoKUu_MrZqLPgxzWqKQmBeKS7CpM8/view?usp=drive_link"
     },
     {
         "x": 6245,

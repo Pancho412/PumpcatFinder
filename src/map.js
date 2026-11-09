@@ -505,11 +505,18 @@ function renderRegionTabs() {
     }
 }
 
+// Pistas que tienen al menos un escondite en la región según los datos
+// (aunque ya no quede ninguno disponible porque se encontró al gato ahí).
+const regionHasHint = (region, hint) => markers.some(m => m.region === region && m.hints.includes(hint));
+
 function renderHintSelect() {
     const select = $("current-hint");
+    const hints = HINT_ORDER
+        .filter(hk => regionHasHint(currentRegion, hk) || hk === state.hint)
+        .sort((a, b) => hintLabel(a).localeCompare(hintLabel(b), LANG, { sensitivity: "base" }));
     select.replaceChildren(
         h("option", { value: "empty" }, t("select_hint")),
-        ...HINT_ORDER.map(hk => {
+        ...hints.map(hk => {
             const n = openCountFor(currentRegion, hk);
             return h("option", { value: hk }, `${hintLabel(hk)}  (${n})`);
         })
