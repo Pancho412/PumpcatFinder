@@ -1883,7 +1883,7 @@ const cat_list = [
         "x": 11734,
         "y": 2845,
         "city": "resort",
-        "hint": "splashing_water",
+        "hint": "pleasant_floral",
         "region": "sinnoh",
         "tooltip": "resort || Pokémon splashing in water",
         "image": "https://drive.google.com/file/d/1vdQrMj3HexQeQN6qr07oqh7YCgdezQZo/view?usp=drive_link"
@@ -2607,6 +2607,15 @@ const cat_list = [
         "region": "unova",
         "tooltip": "nimbasa || Eco",
         "image": "https://drive.google.com/file/d/1y5-uQK-Endk3VC-pY0TKfykPIyY20-EC/view?usp=drive_link"
+    },
+    {
+        "x": 4680,
+        "y": 2880,
+        "city": "nimbasa",
+        "hint": "music",
+        "region": "unova",
+        "tooltip": "nimbasa || Live Music",
+        "image": "https://drive.google.com/file/d/1CGOpWqQImg6A-GFZ5Ayz-Qn3IMlES2bJ/view?usp=drive_link"
     },
     {
         "x": 7378,
